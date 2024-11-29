@@ -1,26 +1,38 @@
+version: '3.8'
 services:
   postgres:
     image: postgres:16
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_DB: scores_management_development
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456789
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
-      test: pg_isready -U postgres -h 0.0.0.0
+      test: pg_isready -U postgres -h localhost
       interval: 5s
+
+  rails:
+    build: .
+    environment:
+      RAILS_ENV: ${RAILS_ENV}
+      SECRET_KEY_BASE: 5028269a4fe32ca0839994180c8319097247b76c8a1f80cc303a4aa1aff00db10e780182ce792a0083380981badafe996cef2a9666b93cf3086d26b9c3097b4e
+
+    depends_on:
+      - postgres
+    volumes:
+      - ".:/rails"
+    ports:
+      - "3000:3000"
+    command: ["bin/rails", "server"]
 
   mailhog:
     image: mailhog/mailhog
-    logging:
-      driver: "none" # disable saving logs
     ports:
-      - 1025:1025 # smtp server
-      - 8025:8025 # web ui
+      - "1025:1025"
+      - "8025:8025"
 
 volumes:
   postgres_data:
-  elasticsearch_data:
-
