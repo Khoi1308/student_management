@@ -1,0 +1,7 @@
+<%= search_form_for @q, url: search_students_path do |f| %>
+  <div class="form-group">
+    <%= f.label :student_id_cont, "Search by Student ID" %>
+    <%= f.search_field :student_id_cont, class: "form-control" %>
+  </div>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>

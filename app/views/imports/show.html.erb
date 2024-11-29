@@ -1,0 +1,9 @@
+<%= form_with url: import_path, class: "max-w-lg mx-auto", method: :post do |f| %>
+  <div class="flex items-center">
+    <%= f.file_field :file, accept: ".csv", class: "block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" %>
+
+    <button type="submit" class="py-2.5 px-5 ml-6 text-sm font-medium text-white bg-blue-700 rounded-lg dark:bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none me-2 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      Upload
+    </button>
+  </div>
+<% end %>

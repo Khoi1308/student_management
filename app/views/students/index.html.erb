@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Students</h1>
+
+<%= paginate @students%>
+<div id="students">
+  <% @students.each do |student| %>
+    <%= render student %>
+    <p>
+      <%= link_to "Show this student", student %>
+    </p>
+  <% end %>
+</div>
+
+<%= paginate @students%>
+
+<%= link_to "New student", new_student_path %>

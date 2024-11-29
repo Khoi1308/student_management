@@ -1,0 +1,72 @@
+<%= form_with(model: student) do |form| %>
+  <% if student.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% student.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :student_id, style: "display: block" %>
+    <%= form.text_field :student_id %>
+  </div>
+
+  <div>
+    <%= form.label :math, style: "display: block" %>
+    <%= form.text_field :math %>
+  </div>
+
+  <div>
+    <%= form.label :literature, style: "display: block" %>
+    <%= form.text_field :literature %>
+  </div>
+
+  <div>
+    <%= form.label :english, style: "display: block" %>
+    <%= form.text_field :english %>
+  </div>
+
+  <div>
+    <%= form.label :physics, style: "display: block" %>
+    <%= form.text_field :physics %>
+  </div>
+
+  <div>
+    <%= form.label :chemical, style: "display: block" %>
+    <%= form.text_field :chemical %>
+  </div>
+
+  <div>
+    <%= form.label :biology, style: "display: block" %>
+    <%= form.text_field :biology %>
+  </div>
+
+  <div>
+    <%= form.label :history, style: "display: block" %>
+    <%= form.text_field :history %>
+  </div>
+
+  <div>
+    <%= form.label :geography, style: "display: block" %>
+    <%= form.text_field :geography %>
+  </div>
+
+  <div>
+    <%= form.label :civic_education, style: "display: block" %>
+    <%= form.text_field :civic_education %>
+  </div>
+
+  <div>
+    <%= form.label :language_id, style: "display: block" %>
+    <%= form.text_field :language_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

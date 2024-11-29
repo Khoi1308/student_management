@@ -1,0 +1,35 @@
+<div class="overflow-x-auto relative">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rtl:text-right">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400 dark:bg-gray-700">
+      <tr>
+        <th scope="col" class="py-3 px-6">Student ID</th>
+        <th scope="col" class="py-3 px-6">Math</th>
+        <th scope="col" class="py-3 px-6">Physics</th>
+        <th scope="col" class="py-3 px-6">Chemical</th>
+        <th scope="col" class="py-3 px-6">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% students.each do |student| %>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <%= student.student_id %>
+          </th>
+          <td class="py-4 px-6">
+            <%= student.math %>
+          </td>
+          <td class="py-4 px-6">
+            <%= student.physics %>
+          </td>
+          <td class="py-4 px-6">
+            <%= student.chemical %>
+          </td>
+          <td class="py-4 px-6">
+            <%= student.total_score %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

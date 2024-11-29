@@ -1,0 +1,39 @@
+<h1>Filter Top 10 Students by Total Score</h1>
+
+<div class="dropdown mb-3">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Filter
+  </button>
+  <div class="dropdown-menu" aria-labelledby="filterDropdown">
+    <a class="dropdown-item" href="<%= filter_students_path(group: 'A') %>">Group A</a>
+  </div>
+</div>
+
+<!-- Hiển thị danh sách top 10 học sinh -->
+<% if @students.present? %>
+  <h2>Top 10 Students with Highest Total Score</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Math</th>
+        <th>Physics</th>
+        <th>Chemistry</th>
+        <th>Total Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.student_id %></td>
+          <td><%= student.math %></td>
+          <td><%= student.physics %></td>
+          <td><%= student.chemical %></td>
+          <td><%= student.total_score %></td> <!-- Hiển thị tổng điểm -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="alert alert-warning">No students found.</p>
+<% end %>
