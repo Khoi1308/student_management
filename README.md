@@ -1,7 +1,7 @@
 # GUIDELINE
 ## Các tính năng của website
 * Import data file (csv file)
-![Import data][./app/images/import_data.png]
+![Import data][./images_git/import_data.png]
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
