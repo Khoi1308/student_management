@@ -11,7 +11,7 @@ class CsvImportService
     batch_size = 200_000 # Số lượng bản ghi nhập mỗi lần
     students_batch = []
 
-    CSV.foreach(@file.path, headers: true).each_with_index do |row, index|
+    CSV.foreach(@file.path, headers: true).each_with_index do |row, _index|
       student_data = {
         student_id: row['sbd'],
         math: row['toan'].to_f,

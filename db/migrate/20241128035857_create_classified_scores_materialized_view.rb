@@ -1,6 +1,6 @@
 class CreateClassifiedScoresMaterializedView < ActiveRecord::Migration[7.1]
   def change
-    execute <<-SQL
+    execute <<-SQL.squish
       CREATE MATERIALIZED VIEW IF NOT EXISTS classified_scores AS
       SELECT
         student_id,

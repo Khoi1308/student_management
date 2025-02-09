@@ -1,6 +1,6 @@
 class DataService
   def generate_statistics
-    sql = <<-SQL
+    sql = <<-SQL.squish
       CREATE MATERIALIZED VIEW IF NOT EXISTS classified_scores AS
       SELECT
         student_id,

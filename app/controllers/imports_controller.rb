@@ -1,6 +1,5 @@
 class ImportsController < ApplicationController
-  def show
-  end
+  def show; end
 
   def create
     file = params[:file]
